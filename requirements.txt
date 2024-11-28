@@ -1,0 +1,30 @@
+# General dependencies
+torch>=1.7.0
+torchvision>=0.8.0
+numpy>=1.18.5
+matplotlib>=3.2.2
+opencv-python>=4.5.1
+pillow>=8.0.0
+tqdm>=4.41.1
+seaborn>=0.11.1
+
+# YOLOv5-specific dependencies
+pyyaml>=5.3
+scipy>=1.4.1
+pandas>=1.1.5
+scikit-learn>=0.24.2
+requests>=2.24.0
+
+# For training and data augmentation
+albumentations>=1.1.0
+tensorboard>=2.4.1
+tensorboardX>=2.4
+
+# For visualization and image processing
+plotly>=4.14.3
+ipywidgets>=7.6.3
+IPython>=7.19.0
+
+# For running inference and utilities
+pycocotools>=2.0.2
+loguru>=0.5.3

@@ -1,0 +1,22 @@
+# Parameters for YOLOv5 large model
+nc: 1  # Number of classes (replace 1 with the actual number of classes)
+depth_multiple: 0.33  # Scale factor for model depth
+width_multiple: 0.50  # Scale factor for layer width
+
+anchors:
+  - [10,13, 16,30, 33,23]  # P3/8
+  - [30,61, 62,45, 59,119]  # P4/16
+  - [116,90, 156,198, 373,326]  # P5/32
+
+backbone:
+  # [from, number, module, args]
+  [[-1, 1, Conv, [64, 6, 2, 2]],
+   [-1, 1, BottleneckCSP, [128]],
+   [-1, 3, BottleneckCSP, [256]],
+   [-1, 9, BottleneckCSP, [512]],
+   [-1, 9, BottleneckCSP, [1024]]]
+
+head:
+  [[-1, 3, BottleneckCSP, [512]],
+   [-1, 3, BottleneckCSP, [256]],
+   [[-1, 1, Conv, [512]], [-1, 1, Upsample, [None]]]]
